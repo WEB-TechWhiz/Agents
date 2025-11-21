@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Solutions Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 1600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f8f9fa;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #001f3f;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .hero-accent {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro-text {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Services Grid */
+        .services-header {
+            font-size: 22px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #ff6b6b;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:nth-child(2) {
+            border-left-color: #4ecdc4;
+        }
+
+        .service-card:nth-child(3) {
+            border-left-color: #ffa502;
+        }
+
+        .service-card:nth-child(4) {
+            border-left-color: #667eea;
+        }
+
+        .service-card:nth-child(5) {
+            border-left-color: #a29bfe;
+        }
+
+        .service-card:nth-child(6) {
+            border-left-color: #fd79a8;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .service-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #001f3f;
+            margin-bottom: 5px;
+        }
+
+        .service-desc {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .expertise-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .expertise-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .expertise-item {
+            font-size: 13px;
+            color: #555;
+            padding: 8px 12px;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .expertise-item::before {
+            content: "✓ ";
+            color: #ff6b6b;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        /* Why Choose Section */
+        .why-section {
+            margin-bottom: 30px;
+        }
+
+        .why-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+        }
+
+        .why-items {
+            display: grid;
+            gap: 12px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .why-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .why-content {
+            flex: 1;
+        }
+
+        .why-item-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #001f3f;
+            margin-bottom: 4px;
+        }
+
+        .why-item-desc {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-item {
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cta-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ee5a52;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            background-color: transparent;
+            color: #001f3f;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid #001f3f;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: #001f3f;
+            color: white;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            margin-bottom: 30px;
+        }
+
+        .portfolio-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .portfolio-item {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+        }
+
+        .portfolio-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #001f3f;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 4px solid #ff6b6b;
+        }
+
+        .footer-contact {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-contact p {
+            margin: 5px 0;
+        }
+
+        .contact-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .social-links {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            line-height: 36px;
+            text-align: center;
+            margin: 0 5px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #ff6b6b;
+        }
+
+        .footer-disclaimer {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 11px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-list {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                padding-bottom: 15px;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .portfolio-items {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">MuffinCode.</div>
+            <div class="tagline">Building Digital Excellence</div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Elevate Your Digital Presence</h1>
+            <p>Expert <span class="hero-accent">MERN Stack</span> & Full-Stack Development</p>
+            <p style="font-size: 14px; opacity: 0.8;">For Agencies, Startups & Forward-Thinking Businesses</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="intro-text">
+                <strong>Hi there! 👋</strong><br><br>
+                We specialize in delivering high-performance, scalable web solutions that drive real business results.
+                Whether you're an agency looking to scale, a freelancer seeking expertise, or a business ready to
+                transform—we've got the skills, experience, and commitment to make it happen.
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-header">Our Core Services</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚛️</div>
+                    <div class="service-title">MERN Stack</div>
+                    <div class="service-desc">Full-stack JavaScript applications with MongoDB, Express, React & Node.js
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <div class="service-title">Static Websites</div>
+                    <div class="service-desc">Ultra-fast, SEO-optimized static sites & JAMstack architectures</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <div class="service-title">Cloud Services</div>
+                    <div class="service-desc">AWS, Azure & GCP deployment, optimization & infrastructure management
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <div class="service-title">WordPress Dev</div>
+                    <div class="service-desc">Custom themes, plugins & eCommerce solutions with WordPress</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <div class="service-title">API Development</div>
+                    <div class="service-desc">RESTful & GraphQL APIs with secure authentication & scalability</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <div class="service-title">Agency Partnerships</div>
+                    <div class="service-desc">White-label solutions & collaborative project delivery</div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="expertise-section">
+                <div class="expertise-title">Technology Stack & Expertise</div>
+                <div class="expertise-list">
+                    <div class="expertise-item">React & Next.js</div>
+                    <div class="expertise-item">Node.js & Express</div>
+                    <div class="expertise-item">MongoDB & PostgreSQL</div>
+                    <div class="expertise-item">TypeScript</div>
+                    <div class="expertise-item">Docker & Kubernetes</div>
+                    <div class="expertise-item">AWS & Cloud</div>
+                    <div class="expertise-item">GraphQL APIs</div>
+                    <div class="expertise-item">Redis & Caching</div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="why-section">
+                <div class="why-title">Why Partner With Us?</div>
+                <div class="why-items">
+                    <div class="why-item">
+                        <div class="why-icon">✨</div>
+                        <div class="why-content">
+                            <div class="why-item-title">Production-Ready Code</div>
+                            <div class="why-item-desc">Clean, scalable, and maintainable code that stands the test of
+                                time</div>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">⏱️</div>
+                        <div class="why-content">
+                            <div class="why-item-title">Fast Turnaround</div>
+                            <div class="why-item-desc">Agile development methodology with transparent timelines &
+                                milestones</div>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🔒</div>
+                        <div class="why-content">
+                            <div class="why-item-title">Security First</div>
+                            <div class="why-item-desc">Industry best practices, encryption, and compliance with
+                                standards</div>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">📊</div>
+                        <div class="why-content">
+                            <div class="why-item-title">Performance Optimized</div>
+                            <div class="why-item-desc">Lightning-fast load times, responsive design, and SEO excellence
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🤝</div>
+                        <div class="why-content">
+                            <div class="why-item-title">Dedicated Support</div>
+                            <div class="why-item-desc">Post-launch support, maintenance, and continuous optimization
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">💡</div>
+                        <div class="why-content">
+                            <div class="why-item-title">Strategic Partnership</div>
+                            <div class="why-item-desc">We act as an extension of your team, not just a vendor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="portfolio-section">
+                <div class="portfolio-title">Recent Work</div>
+                <div class="portfolio-items">
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">🛍️</div>
+                        <div class="portfolio-name">eCommerce Platform</div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">📊</div>
+                        <div class="portfolio-name">Analytics Dashboard</div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">👥</div>
+                        <div class="portfolio-name">SaaS Application</div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">🌐</div>
+                        <div class="portfolio-name">Corporate Website</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-title">Ready to Transform Your Ideas?</div>
+                <div class="cta-text">
+                    Let's discuss how we can help you achieve your digital goals. Whether it's a new project, scaling an
+                    existing one, or optimizing your current stack—we're here to deliver excellence.
+                </div>
+                <a href="kurrohit300@gmail.com" class="cta-button">Get In Touch</a>
+                <a href="#" class="secondary-button">View Portfolio</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-contact">
+                <p><strong>MuffinCode.</strong></p>
+                <p>📧 <a href="mailto:kurrohit300@gmail.com" class="contact-link">kurrohit300@gmail.com</a></p>
+                <p>📱 +91 7042635500</p>
+                <!-- <p>🌐 www.devsolutions.com</p> -->
+            </div>
+            <div class="social-links">
+                <!-- <a href="#" class="social-link">f</a> -->
+                <a href="https://www.linkedin.com/in/rohit-kumar-backend-developer/" class="social-link">in</a>
+                <a href="#" class="social-link">tw</a>
+                <a href="#" class="social-link">gh</a>
+            </div>
+            <div class="footer-disclaimer">
+                <p>© 2025 MuffinCode. All rights reserved.</p>
+                <p>This email is confidential and intended only for the addressee.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
