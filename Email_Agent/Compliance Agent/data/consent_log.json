@@ -1,0 +1,16 @@
+[
+  {
+    "email": "REDACTED",
+    "source": "Signup Form",
+    "consent_type": "marketing",
+    "timestamp": "2025-11-22 13:14:40.509792",
+    "ip_address": "REDACTED"
+  },
+  {
+    "email": "REDACTED",
+    "source": "Signup Form",
+    "consent_type": "marketing",
+    "timestamp": "2025-11-22 13:15:42.121671",
+    "ip_address": "REDACTED"
+  }
+]

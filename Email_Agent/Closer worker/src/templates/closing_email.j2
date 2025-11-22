@@ -1,0 +1,26 @@
+Subject: Proposal for {{ lead.company or 'your team' }} - {{ proposal.product_name }}
+
+Hi {{ lead.name }},
+
+It was great connecting with you. Based on our understanding of your needs, I've put together a proposal for {{ proposal.product_name }}.
+
+**Executive Summary:**
+- **Investment:** {{ proposal.price_range }}
+- **Estimated ROI:** {{ proposal.roi_estimate }}
+- **Timeline:** {{ proposal.timeline }}
+
+We have outlined a few options for you to move forward:
+
+{% for option in proposal.options %}
+{{ loop.index }}. **{{ option.name }}**: {{ option.description }}
+   {% if option.action_link %}[Click here]({{ option.action_link }}){% endif %}
+{% endfor %}
+
+I've also attached a formal quote PDF for your records.
+
+If you'd like to discuss this further, feel free to book a time on my calendar here:
+{{ scheduling_link }}
+
+Best regards,
+
+The AI Sales Team

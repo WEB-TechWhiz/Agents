@@ -1,0 +1,45 @@
+[
+  {
+    "email": "lead1@techco.com",
+    "first_name": "John",
+    "last_name": null,
+    "company": "TechCo",
+    "source": "manual",
+    "industry": "SaaS",
+    "company_size": "50-200",
+    "tech_stack": [
+      "Python",
+      "AWS"
+    ],
+    "role": "Head of Growth",
+    "location": "San Francisco, CA",
+    "score": 80,
+    "segment": "hot",
+    "match_reasons": [
+      "Industry match: SaaS",
+      "Role match: Head of Growth",
+      "Tech match: Python"
+    ]
+  },
+  {
+    "email": "lead2@retail.com",
+    "first_name": "Jane",
+    "last_name": null,
+    "company": "RetailInc",
+    "source": "manual",
+    "industry": "Retail",
+    "company_size": "50-200",
+    "tech_stack": [
+      "Python",
+      "AWS"
+    ],
+    "role": "Head of Growth",
+    "location": "San Francisco, CA",
+    "score": 50,
+    "segment": "warm",
+    "match_reasons": [
+      "Role match: Head of Growth",
+      "Tech match: Python"
+    ]
+  }
+]

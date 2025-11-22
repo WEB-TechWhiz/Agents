@@ -1,0 +1,22 @@
+QUOTE FOR SERVICES
+
+Date: {{ date }}
+To: {{ lead.name }}
+Company: {{ lead.company or 'N/A' }}
+
+Product: {{ proposal.product_name }}
+
+--------------------------------------------------
+Description                             Price
+--------------------------------------------------
+{{ proposal.product_name }} Implementation    {{ proposal.price_range }}
+
+--------------------------------------------------
+
+ROI Estimate: {{ proposal.roi_estimate }}
+Timeline: {{ proposal.timeline }}
+
+Terms: Net 30
+Valid until: {{ valid_until }}
+
+Thank you for your business.
